@@ -1,4 +1,5 @@
 ﻿using API_TouristBay.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing.Printing;
 
 namespace API_TouristBay.Models
@@ -41,7 +42,7 @@ namespace API_TouristBay.Models
 
         public Vuelo()
         {
-            _id = 0;
+            _id = 1;
             _aerolinea = 0;
             _clase = false;
             _destino = 0;
@@ -61,12 +62,16 @@ namespace API_TouristBay.Models
 
         public int Destino { get => _destino; set => _destino = value; }
 
+        [NotMapped]
         public DateOnly FSalida { get => _fSalida; set => _fSalida = value; }
 
+        [NotMapped]
         public TimeOnly HAbordaje { get => _hAbordaje; set => _hAbordaje = value; }
 
+        [NotMapped]
         public TimeOnly HLlegada { get => _hLlegada; set => _hLlegada = value; }
 
+        [NotMapped]
         public TimeOnly HSalida { get => _hSalida; set => _hSalida = value; }
 
         public int Id { get => _id; set => _id = value; }

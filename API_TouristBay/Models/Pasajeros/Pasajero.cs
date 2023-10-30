@@ -5,15 +5,13 @@ namespace API_TouristBay.Models.Pasajeros
     public class Pasajero
     {
         private string _apellido;
-
-        [NotMapped]
         private DateOnly _fNacimiento;
         private bool _genero;
         private int _id;
         private string _nombre;
         public Pasajero()
         {
-            _id = 0;
+            _id = 1;
             _nombre = "default";
             _apellido = "default";
             _fNacimiento = new DateOnly();
@@ -25,6 +23,8 @@ namespace API_TouristBay.Models.Pasajeros
             return $"Id: {_id}";
         }
         public string Apellido { get => _apellido; set => _apellido = value; }
+
+        [NotMapped]
         public DateOnly fNacimiento { get => _fNacimiento; set => _fNacimiento = value; }
         public bool Genero { get => _genero; set => _genero = value; }
         public int Id { get => _id; set => _id = value; }
